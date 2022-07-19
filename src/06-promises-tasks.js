@@ -108,11 +108,11 @@ function chainPromises(/* array, action */) {
   // const arr = [];
   // const result = Promise.resolve(array);
   // return result
-  //   .then((data) =>
+  //   .then((data) => {
   //     data.forEach((res) => {
-  //       res.then((dataa) => arr.push(dataa));
-  //     })
-  //   )
+  //       res.then((datas) => arr.push(datas));
+  //     });
+  //   })
   //   .then(() => arr.reduce((accum, curr) => action(accum, curr)));
 }
 
