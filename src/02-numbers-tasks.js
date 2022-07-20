@@ -241,22 +241,13 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  // throw new Error('Not implemented');
 
-  // if (value === null) return def;
-  // console.log('value',+value);
-  // if (typeof value === 'string') {
-  //   const stringnum = +value;
-  //   if (typeof stringnum === 'number' && stringnum === 'NaN') {
-  //     return stringnum;
-  //   }
-  //   return def;
-  // }
-  // if (typeof value === 'number' || value instanceof Number) {
-  //   return Number(value.toString());
-  // }
-  // return def;
+  if (Number(value)) {
+    return Number(value);
+  }
+  return def;
 }
 
 module.exports = {

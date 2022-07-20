@@ -312,8 +312,14 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  return arr.reduce((accum, el) => {
+    let count = accum;
+    if (typeof el === 'number' && el > 0) {
+      count += 1;
+    }
+    return count;
+  }, 0);
 }
 
 /**
@@ -520,8 +526,11 @@ function getIdentityMatrix(n) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  // throw new Error('Not implemented');
+  return Array(end - start + 1)
+    .fill(start)
+    .map((x, i) => x + i);
 }
 
 /**
@@ -649,8 +658,19 @@ function getElementByIndexes(arr, indexes) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  // throw new Error('Not implemented');
+  const result = [];
+  const firstHalf = arr.slice(0, Math.floor(arr.length / 2));
+  const lastHalf = arr.slice(Math.ceil(arr.length / 2));
+  result.push(lastHalf);
+  if (arr.length % 2 !== 0) {
+    const middleElem = Math.ceil(arr.length / 2);
+    result.push(middleElem);
+  }
+  result.push(firstHalf);
+
+  return result.flat();
 }
 
 module.exports = {
